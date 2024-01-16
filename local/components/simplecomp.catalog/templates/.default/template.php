@@ -9,7 +9,11 @@
         <?php foreach ($arResult["NEWS"] as $arNews) { ?>
             <li><b><?= $arNews["NAME"]; ?></b> -
                 <?= $arNews["ACTIVE_FROM"]; ?>
-                (<?= implode(", ", $arNews["SECTIONS"]); ?>)
+                <?php if(is_array($arNews["SECTIONS"])) { ?>
+                    (<?= implode(", ", $arNews["SECTIONS"]); ?>)
+                <?php } else { ?>
+                    (<?= $arNews["SECTIONS"] ?>)
+                <?php } ?>
             </li>
             <?php if (count($arNews["PRODUCTS"]) > 0) { ?>
                 <ul>
@@ -26,4 +30,3 @@
         } ?>
     </ul>
 <?php } ?>
-
