@@ -18,10 +18,10 @@ class OnBeforeEventAddHandlers
                 "#ID#" => $USER->GetID(),
                 "#LOGIN#" => $USER->GetLogin(),
                 "#NAME#" => $USER->GetFullName(),
-                "#FORM_DATA#" => $arFields['AUTHOR']
+                "#FORMDATA#" => $arFields['AUTHOR']
             ]);
         } else {
-            $arFields['AUTHOR'] = GetMessage("USER_NOT_AUTH", ["#FORM_DATA#" => $arFields['AUTHOR']]);
+            $arFields['AUTHOR'] = GetMessage("USER_NOT_AUTH", ["#FORMDATA#" => $arFields['AUTHOR']]);
         }
         CEventLog::Add([
             "SEVERITY" => "SECURITY",
